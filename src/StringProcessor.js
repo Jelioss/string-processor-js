@@ -1,16 +1,17 @@
-// Класс для обработки строк
+import { StringUtils } from './StringUtils.js';
+
 export class StringProcessor {
 	constructor() {
 		this.strings = [];
 	}
 
-	// Добавление строки
 	addString(str) {
 		this.strings.push(str);
 	}
 
-	// Вывод строк
 	getStrings() {
-		return this.strings.join("<br>");
+		return this.strings
+			.map(str => `Original: ${str}, Reversed: ${StringUtils.reverseString(str)}`)
+			.join("<br>");
 	}
 }
